@@ -5,19 +5,16 @@ box(axes1,'on');
 hold(axes1,'on');
 
 ylabel({name},'Interpreter','latex');
-ylim([-40 40]);
 
 xlabel('Iteraciones','Interpreter','latex');
-xlim([0 11]);
 
 title(strcat(name,' con el metodo de Newton Multivariable'),'Interpreter','latex');
 
-plot(matrizNMV(1,:));
+
 hold on;
-plot(matrizNMV(2,:));
-hold off;
-hold on;
-plot(matrizNMV(3,:));
+plot(matrizNMV(1,:),'-*r','MarkerSize',5,'MarkerFaceColor','r');
+plot(matrizNMV(2,:),'-+b','MarkerSize',5,'MarkerFaceColor','g');
+plot(matrizNMV(3,:),'-og','MarkerSize',5,'MarkerFaceColor','g');
 hold off;
 
 legend('x1','x2','x3');

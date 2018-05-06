@@ -1,5 +1,4 @@
 function graficarErrores(name,biseccion,secante,regula,newton)
-
 figure1 = figure;
 
 % Create axes
@@ -16,7 +15,7 @@ plot([newton],'-og','MarkerSize',5,'MarkerFaceColor','g');
 title(strcat('Errores de: ',name));
 ylabel('Errores'); % y-axis label
 xlabel('Iteraciones'); % x-axis label
-legend('Bisección','Secante','Regula-Falsi');
+legend('Bisección','Secante','Regula-Falsi','Newton-Raphson');
 
-
+saveas(figure1,strcat('imagenes/errores', name) , 'png');
 end

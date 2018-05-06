@@ -11,10 +11,6 @@ while it < it_max
     else
         xNew = xActual - ((funcion(xActual)*(xActual-xOld))/d);
         errorAbs = abs((xNew-xActual)/xNew);
-        disp(errorAbs);
-        disp(xNew);
-        disp(xActual);
-        disp('\n');
         valorX = [valorX xNew];
         error = [error errorAbs];
         xOld = xActual;

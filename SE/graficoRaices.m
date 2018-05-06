@@ -5,10 +5,10 @@ box(axes1,'on');
 hold(axes1,'on');
 
 ylabel('Raices','Interpreter','latex');
-ylim([0 1000000]);
+
 
 xlabel('Iteraciones','Interpreter','latex');
-xlim([0 300]);
+
 
 title(strcat(name,' con los metodos no lineales'),'Interpreter','latex');
 
@@ -19,7 +19,7 @@ hold off;
 
 legend('GaussJacobi','GaussSeidel');
 
-saveas(figure1,strcat('graficos/Imagenes/figuraGrafico', name) , 'png');
+saveas(figure1,strcat('imagenes/grafico', name) , 'png');
 
 end
 

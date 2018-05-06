@@ -5,19 +5,16 @@ box(axes1,'on');
 hold(axes1,'on');
 
 ylabel({name},'Interpreter','latex');
-ylim([-1 10]);
 
 xlabel('Iteraciones','Interpreter','latex');
-xlim([0 20]);
 
 title(strcat(name,': errores con el metodo de Newton Multivariable'),'Interpreter','latex');
 
-plot(error1); 
 hold on;
-plot(error2);
-hold off;
-hold on;
-plot(error3);
+
+plot(error1,'-*r','MarkerSize',5,'MarkerFaceColor','r'); 
+plot(error2,'-+b','MarkerSize',5,'MarkerFaceColor','g');
+plot(error3,'-og','MarkerSize',5,'MarkerFaceColor','g');
 hold off;
 
 legend('x1','x2','x3');

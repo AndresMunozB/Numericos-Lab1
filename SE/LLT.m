@@ -1,4 +1,4 @@
-function [raiz,time] = LLT(A,b)
+    function [raiz,time] = LLT(A,b)
 tic;
 raiz = [];
 [n,m]=size(A);
