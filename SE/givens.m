@@ -1,4 +1,5 @@
-function [Q,R]=givens(A)
+function [raiz,time]=givens(A,b)
+    tic;
     [m,n]=size(A);
     Q=eye(m);
     R=A;
@@ -18,4 +19,6 @@ function [Q,R]=givens(A)
             end
         end
     end
+    raiz=inv(R)*Q'*b;
+    time = toc;
 end 

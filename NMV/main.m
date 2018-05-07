@@ -18,8 +18,8 @@ xInicialNMVF = 0;
 yInicialNMVF = 0;
 
 [matrix,errF1,errF2] = newtonMultivariableDos(xInicialNMVF,yInicialNMVF,iteraciones,f1,f2,df1x,df1y,df2x,df2y,toleranciaNMV);
-graficoNMV2('Funcion1',matrix);
-graficoErrorNMV2('Function1',errF1,errF2);
+graficoNMV2('Sistema 1',matrix);
+graficoErrorNMV2('Sistema 1',errF1,errF2);
 
 
 %EXPORTACION DE DATOS EN .mat
@@ -46,8 +46,8 @@ yInicialNMVG = 0;
 zInicialNMVG = 0;
 
 [matriz,errG1,errG2,errG3] = newtonMultivariableTres(xInicialNMVG,yInicialNMVG,zInicialNMVG,iteraciones,g1,g2,g3,dg1x,dg1y,dg1z,dg2x,dg2y,dg2z,dg3x,dg3y,dg3z,toleranciaNMV);
-graficoNMV3('Funcion2',matriz);
-graficoErrorNMV3('Funcion2',errG1,errG2,errG3);
+graficoNMV3('Sistema 2',matriz);
+graficoErrorNMV3('Sistema 2',errG1,errG2,errG3);
 
 %EXPORTACION DE DATOS EN .mat
 save('data/newtonMV3.mat','matriz','errG1','errG2','errG3');

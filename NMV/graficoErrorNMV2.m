@@ -3,6 +3,7 @@ figure1 = figure;
 axes1 = axes('Parent',figure1);
 box(axes1,'on');
 hold(axes1,'on');
+grid on
 
 ylabel({name},'Interpreter','latex');
 
@@ -17,6 +18,6 @@ hold off;
 
 legend('x1','x2')
 
-saveas(figure1,strcat('imagenes/ErrorNMV3', name) , 'png');
+saveas(figure1,strcat('imagenes/ErrorNMV2', name) , 'jpg');
 
 end
