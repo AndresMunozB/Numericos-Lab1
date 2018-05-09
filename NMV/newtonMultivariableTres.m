@@ -1,4 +1,5 @@
-function [matrix, errF1,errF2,errF3] = newtonMultivariableTres(xOld,yOld,zOld,iteracion,f1,f2,f3,df1x,df1y,df1z,df2x,df2y,df2z,df3x,df3y,df3z,tolerancia)
+function [matrix, errF1,errF2,errF3,iteraciones,tiempo] = newtonMultivariableTres(xOld,yOld,zOld,iteracion,f1,f2,f3,df1x,df1y,df1z,df2x,df2y,df2z,df3x,df3y,df3z,tolerancia)
+tic;
 f1 = inline(f1);
 f2 = inline(f2);
 f3 = inline(f3);
@@ -35,4 +36,6 @@ while (errorf1 > tolerancia || errorf2 > tolerancia || errorf3 > tolerancia) && 
     errF3 = [errF3 errorf3];
     it = it+1;
 end
+iteraciones = it;
+tiempo = toc;
 end

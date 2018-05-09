@@ -16,7 +16,8 @@ while it < it_max
         xOld = xActual;
         xActual = xNew;
         if errorAbs < tolerancia
-            it = it_max;
+            %it = it_max;
+            break;
         else
             it = it + 1;
         end    

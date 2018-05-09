@@ -30,6 +30,7 @@ function [raiz,time] = LU(A,b)
                     U(j,i)=(A(j,i)-sumau)/L(j,j);
                 end
             end
+            
         end
     end
     matrizB = b';

@@ -13,10 +13,11 @@ while it < it_max
    valorX = [valorX xr];
    error = [error errorAbs];
    if errorAbs < tolerancia
-       it = it_max;
+       %it = it_max;
+       break;
    else
        it = it + 1;
-   end    
+   end 
 end
 tiempo = toc;
 iteraciones = it;

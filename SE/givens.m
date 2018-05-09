@@ -19,6 +19,7 @@ function [raiz,time]=givens(A,b)
             end
         end
     end
+    
     raiz=inv(R)*Q'*b;
     time = toc;
 end 

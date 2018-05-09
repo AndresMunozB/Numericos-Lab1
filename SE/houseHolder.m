@@ -1,31 +1,27 @@
-function [raiz,time] = houseHolder(A,b)
+function [raiz,error,contadorHou,time] = houseHolder(A,b)
     tic;
-    clc;
-    [m n] = size(A);
-
-    R= A;
-    Q = eye(m,m);
-
-    n1=min(m,n);
-
-    for i= 1:n1
-        x = R(i:m, i);
-        s=0;
-
-        if x(1)==0
-            s = 1;
-        else
-            s= sign(x(1));
-        end
-
-        e = zeros(m - i + 1, 1);   
-        e(1)=1;   
-        u = s * norm(x) * e + x;
-        u = u / norm(u);
-        R(i:m, i:n) =  R(i:m, i:n) - 2*(u*u')*R(i:m, i:n);
-        Q(:,i:m) = Q(:,i:m) - Q(:,i:m)*(2*u*u');   
+    contadorHou = 0;
+    [m,n] = size(A);
+    Q = eye(m);      
+    R = A;
+    %Transformormacion QR
+    for j = 1:n 
+        normx = norm(R(j:end,j));
+        s     = -sign(R(j,j));
+        u1    = R(j,j) - s*normx;
+        w     = R(j:end,j)/u1;
+        w(1)  = 1;
+        tau   = -s*u1/normx;
+        %Reemplazando
+        R(j:end,:) = R(j:end,:)-(tau*w)*(w'*R(j:end,:));
+        Q(:,j:end) = Q(:,j:end)-(Q(:,j:end)*w)*(tau*w)';
+        contadorHou = contadorHou + 11;
     end
-    raiz=inv(R)*Q'*b;
+    %Obtener resultado
+    z = inv(Q)*b;
+    raiz = inv(R)*z; 
+    error = norm(eye(m)-inv(Q*R)*A);
+    contadorHou = contadorHou + 5;
     time = toc;
 
 end
