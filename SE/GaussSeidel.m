@@ -25,7 +25,7 @@ function [X,iteracion,time]=GaussSeidel(A,b,x0,iter)
             end
             fin=0;
             iteracion=1;
-            x(1,:)=x0'
+            x(1,:)=x0';
             while (fin==0)&&(iteracion<iter)
                 X=[X; x(iteracion,:)];
                 for componente=1:cols
@@ -49,5 +49,4 @@ function [X,iteracion,time]=GaussSeidel(A,b,x0,iter)
     end
     time = toc;
 end
-
 

@@ -1,6 +1,5 @@
-function [raiz,error,contadorHou,time] = houseHolder(A,b)
+function [raiz,time] = houseHolder(A,b)
     tic;
-    contadorHou = 0;
     [m,n] = size(A);
     Q = eye(m);      
     R = A;
@@ -15,13 +14,12 @@ function [raiz,error,contadorHou,time] = houseHolder(A,b)
         %Reemplazando
         R(j:end,:) = R(j:end,:)-(tau*w)*(w'*R(j:end,:));
         Q(:,j:end) = Q(:,j:end)-(Q(:,j:end)*w)*(tau*w)';
-        contadorHou = contadorHou + 11;
     end
     %Obtener resultado
     z = inv(Q)*b;
     raiz = inv(R)*z; 
-    error = norm(eye(m)-inv(Q*R)*A);
-    contadorHou = contadorHou + 5;
+    %error = norm(eye(m)-inv(Q*R)*A);
+    %contadorHou = contadorHou + 5;
     time = toc;
 
 end
